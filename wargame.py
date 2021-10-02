@@ -19,3 +19,31 @@ class Card():
     def __str__(self): 
         return self.rank + " of " + self.suit
 
+
+
+#Deck CLASS
+
+#Create all 52 Card objs
+#hold as a list of Card objs
+#shuffle deck through a methos call - Random library shuffle() function
+#deal Cards from the Deck object - pop method from card list
+
+class Deck():
+    
+    def __init__(self):
+        
+        self.all_cards = []
+        
+        for suit in suits:
+            for rank in ranks:
+                #create the card object
+                created_card = Card(suit,rank)
+                self.all_cards.append(created_card)
+                
+    def shuffle(self):
+        
+        random.shuffle(self.all_cards)
+        
+    def deal_one(self):
+        
+        return self.all_cards.pop()
