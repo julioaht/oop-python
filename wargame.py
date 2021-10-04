@@ -72,3 +72,23 @@ class Player():
     
     def __str__(self):
         return f'Player {self.name} has {len(self.all_cards)} cards.'
+
+
+# GAME LOGIC    
+#game setup
+
+#while game_on
+    #while at_war   
+
+#create players
+player_one =Player("one")
+player_two=Player('two')
+
+#create new deck
+new_deck = Deck()
+new_deck.shuffle()
+
+# there are 52 cards in the deck. we use 26 bc we are giving two cards at the time. 26*2=52
+for x in range(26):
+    player_one.add_cards(new_deck.deal_one())
+    player_two.add_cards(new_deck.deal_one()) 
