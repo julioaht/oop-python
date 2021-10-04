@@ -39,11 +39,36 @@ class Deck():
                 #create the card object
                 created_card = Card(suit,rank)
                 self.all_cards.append(created_card)
-                
+    #shuffle from deck            
     def shuffle(self):
         
         random.shuffle(self.all_cards)
-        
+    
+    #Pop method for cardlist    
     def deal_one(self):
         
         return self.all_cards.pop()
+
+
+#Player Class
+
+class Player():
+    
+    def __init__(self,name):
+        
+        self.name = name
+        self.all_cards = []
+        
+    def remove_one(self):
+        return self.all_cards.pop(0)
+        
+    def add_cards(self, new_cards):
+        # List of multiple cards objects
+        if type(new_cards) == type([]):
+            self.all_cards.extend(new_cards)
+        else:
+            #for a single Card Object
+            self.all_cards.append(new_cards)
+    
+    def __str__(self):
+        return f'Player {self.name} has {len(self.all_cards)} cards.'
