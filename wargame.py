@@ -92,3 +92,32 @@ new_deck.shuffle()
 for x in range(26):
     player_one.add_cards(new_deck.deal_one())
     player_two.add_cards(new_deck.deal_one()) 
+
+#very important lets us now if someone won or the game continues
+game_on = True  
+
+#counter to know how many rounds have been played
+round_num = 0
+
+while game_on:
+    round_num += 1
+    print(f'Round {round_num}')
+    
+    if len(player_one.all_cards) == 0:
+        print('Player one is out of cards! Plater TWO WINS!')
+        game_on = False
+        break
+    
+    if len(player_two.all_cards) == 0:
+        print('Player two is out of cards! Plater ONE WINS!')
+        game_on = False
+        break
+        
+    #start a new round
+    #current cards in play. not all cards
+    player_one_cards = []
+    player_one_cards.append(player_one.remove_one())
+    
+    player_two_cards = []
+    player_two_cards.append(player_two.remove_one())
+    
