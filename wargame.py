@@ -104,12 +104,12 @@ while game_on:
     print(f'Round {round_num}')
     
     if len(player_one.all_cards) == 0:
-        print('Player one is out of cards! Plater TWO WINS!')
+        print('Player one is out of cards! Player TWO WINS!')
         game_on = False
         break
     
     if len(player_two.all_cards) == 0:
-        print('Player two is out of cards! Plater ONE WINS!')
+        print('Player two is out of cards! Player ONE WINS!')
         game_on = False
         break
         
